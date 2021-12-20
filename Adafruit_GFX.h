@@ -62,6 +62,7 @@ class Adafruit_GFX : public Print {
           int16_t x1, int16_t y1, int16_t x2, int16_t y2, int16_t x3, int16_t y3, int16_t x4, int16_t y4, uint16_t color),
     drawTriangle(int16_t x0, int16_t y0, int16_t x1, int16_t y1,
       int16_t x2, int16_t y2, uint16_t color),
+	  drawSix(int16_t x0, int16_t y0, int16_t r, uint16_t color),
     fillTriangle(int16_t x0, int16_t y0, int16_t x1, int16_t y1,
       int16_t x2, int16_t y2, uint16_t color),
     drawRoundRect(int16_t x0, int16_t y0, int16_t w, int16_t h,

@@ -439,19 +439,32 @@ void Adafruit_GFX::drawHexagon(int16_t x0, int16_t y0,
     drawLine(xf, yf, xa, ya, color);
 }
 
-//Îå±ßÎå½ÇÐÇ
-void Adafruit_GFX::drawFivepentagram(int16_t x0, int16_t y0,
-	int16_t x1, int16_t y1, int16_t x2, int16_t y2, int16_t x3, int16_t y3, int16_t x4, int16_t y4, uint16_t color) {
-	drawLine(x0, y0, x1, y1, color);
-	drawLine(x1, y1, x2, y2, color);
-	drawLine(x2, y2, x3, y3, color);
-	drawLine(x3, y3, x4, y4, color);
-	drawLine(x4, y4, x0, y0, color);
-	drawLine(x0, y0, x2, y2, color);
-	drawLine(x0, y0, x3, y3, color);
-	drawLine(x1, y1, x3, y3, color);
-	drawLine(x1, y1, x4, y4, color);
-	drawLine(x2, y2, x4, y4, color);
+//draw a six
+void Adafruit_GFX::drawSix(int16_t x0, int16_t y0, int16_t r, uint16_t color) {
+	int xa, ya;
+	int xb, yb;
+	int xc, yc;
+	int xd, yd;
+	int xe, ye;
+	int xf, yf;
+	xa = x0;
+	ya = y0;
+	xb = x0 + r;
+	yb = y0;
+	xc = x0 + r / 2;
+	yc = y0 + r * (sin(PI / 180 * 60));
+	xd = x0;
+	yd = y0 + r * (tan(PI / 180 * 30));
+	xe = x0 + r / 2;
+	ye = y0 - r * (tan(PI / 180 * 30)) / 2;
+	xf = x0 + r;
+	yf = y0 + r * (tan(PI / 180 * 30));
+	drawLine(xa, ya, xb, yb, color);
+	drawLine(xa, ya, xc, yc, color);
+	drawLine(xb, yb, xc, yc, color);
+	drawLine(xd, yd, xe, ye, color);
+	drawLine(xd, yd, xf, yf, color);
+	drawLine(xe, ye, xf, yf, color);
 }
 
 // Draw a triangle
