@@ -410,6 +410,34 @@ void Adafruit_GFX::drawEllipse(int16_t x1, int16_t y1, int16_t x2, int16_t y2, i
     endWrite();
 }
 
+// Draw a hexagon
+void Adafruit_GFX::drawHexagon(int16_t x0, int16_t y0,
+    int16_t r0, uint16_t color) {
+    int xa, ya;
+    int xb, yb;
+    int xc, yc;
+    int xd, yd;
+    int xe, ye;
+    int xf, yf;
+    xa = x0;
+    ya = y0 - r0;
+    xb = x0 - sin(PI / 180 * 60);
+    yb = y0 - cos(PI / 180 * 60);
+    xc = x0 - sin(PI / 180 * 60);
+    yc = y0 + cos(PI / 180 * 60);
+    xd = x0;
+    yd = y0 + r0;
+    xe = x0 + sin(PI / 180 * 60);
+    ye = y0 + cos(PI / 180 * 60);
+    xf = x0 + sin(PI / 180 * 60);
+    yf = y0 - cos(PI / 180 * 60);
+    drawLine(xa, ya, xb, yb, color);
+    drawLine(xb, yb, xc, yc, color);
+    drawLine(xc, yc, xd, yd, color);
+    drawLine(xd, yd, xe, ye, color);
+    drawLine(xe, ye, xf, yf, color);
+    drawLine(xf, yf, xa, ya, color);
+}
 
 // Draw a triangle
 void Adafruit_GFX::drawTriangle(int16_t x0, int16_t y0,
