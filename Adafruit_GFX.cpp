@@ -439,6 +439,21 @@ void Adafruit_GFX::drawHexagon(int16_t x0, int16_t y0,
     drawLine(xf, yf, xa, ya, color);
 }
 
+//Îå±ßÎå½ÇÐÇ
+void Adafruit_GFX::drawFivepentagram(int16_t x0, int16_t y0,
+	int16_t x1, int16_t y1, int16_t x2, int16_t y2, int16_t x3, int16_t y3, int16_t x4, int16_t y4, uint16_t color) {
+	drawLine(x0, y0, x1, y1, color);
+	drawLine(x1, y1, x2, y2, color);
+	drawLine(x2, y2, x3, y3, color);
+	drawLine(x3, y3, x4, y4, color);
+	drawLine(x4, y4, x0, y0, color);
+	drawLine(x0, y0, x2, y2, color);
+	drawLine(x0, y0, x3, y3, color);
+	drawLine(x1, y1, x3, y3, color);
+	drawLine(x1, y1, x4, y4, color);
+	drawLine(x2, y2, x4, y4, color);
+}
+
 // Draw a triangle
 void Adafruit_GFX::drawTriangle(int16_t x0, int16_t y0,
         int16_t x1, int16_t y1, int16_t x2, int16_t y2, uint16_t color) {
